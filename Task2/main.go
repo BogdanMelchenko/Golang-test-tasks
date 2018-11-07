@@ -25,7 +25,6 @@ func main() {
 		desktops[i].storage = (i+1)*1000 + i*2*8*16
 	}
 	for i, v := range desktops {
-		fmt.Print(strconv.Itoa(i) + " | ")
-		fmt.Println(v)
+		fmt.Printf("index: %v | name: %v, cpu: %v, ram: %v, gpu: %v, storage: %v, cost: %v \n", i, v.name, v.cpu, v.ram, v.gpu, v.storage, v.cost)
 	}
 }

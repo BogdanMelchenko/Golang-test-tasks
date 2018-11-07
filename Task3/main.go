@@ -6,8 +6,8 @@ import (
 )
 
 type Computer interface {
-	addRAM(int)
-	showRAM() string
+	AddRAM(int)
+	ShowRAM() string
 }
 
 type PC struct {
@@ -41,23 +41,23 @@ func main() {
 		}
 	}
 	for i, v := range container.computers {
-		v.addRAM(512 * i)
-		fmt.Println(strconv.Itoa(i) + " | " + v.showRAM())
+		v.AddRAM(512 * i)
+		fmt.Println(strconv.Itoa(i) + " | " + v.ShowRAM())
 	}
 }
 
-func (object *PC) addRAM(additionRAM int) {
+func (object *PC) AddRAM(additionRAM int) {
 	object.ram += additionRAM
 }
 
-func (object PC) showRAM() string {
+func (object PC) ShowRAM() string {
 	return fmt.Sprintf("PC!\t\t  ram: %v", object.ram)
 }
 
-func (object *Laptop) addRAM(additionRAM int) {
+func (object *Laptop) AddRAM(additionRAM int) {
 	object.inner.ram += additionRAM
 }
 
-func (object Laptop) showRAM() string {
+func (object Laptop) ShowRAM() string {
 	return fmt.Sprintf("Laptop!\t ram: %v", object.inner.ram)
 }
